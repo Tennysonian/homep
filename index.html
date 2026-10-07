@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<header>
+  <h1>My Website</h1>
+
+  <button id="languageButton" onclick="toggleLanguage()">
+    English
+  </button>
+</header>
+
+<nav>
+  <a href="#profile">プロフィール</a>
+  <a href="#about">自己紹介</a>
+  <a href="#career">経歴</a>
+  <a href="#achievements">業績</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
+
+<main>
+
+  <!-- プロフィール -->
+  <section id="profile">
+    <h2 class="ja">プロフィール</h2>
+    <h2 class="en">Profile</h2>
+
+    <p class="ja">
+      ここに日本語のプロフィールを書きます。
+    </p>
+
+    <p class="en">
+      Write your English profile here.
+    </p>
+  </section>
+
+
+  <!-- 自己紹介 -->
+  <section id="about">
+    <h2 class="ja">自己紹介</h2>
+    <h2 class="en">About Me</h2>
+
+    <p class="ja">
+      ここに日本語の自己紹介を書きます。
+    </p>
+
+    <p class="en">
+      Write your English introduction here.
+    </p>
+  </section>
+
+
+  <!-- 経歴 -->
+  <section id="career">
+    <h2 class="ja">経歴</h2>
+    <h2 class="en">Career</h2>
+
+    <div class="ja">
+      <p>2020年　〇〇大学卒業</p>
+      <p>2020年　〇〇株式会社入社</p>
+      <p>2025年　〇〇に従事</p>
+    </div>
+
+    <div class="en">
+      <p>2020 Graduated from XXXX University</p>
+      <p>2020 Joined XXXX Corporation</p>
+      <p>2025 XXXX</p>
+    </div>
+  </section>
+
+
+  <!-- 業績 -->
+  <section id="achievements">
+    <h2 class="ja">業績</h2>
+    <h2 class="en">Achievements</h2>
+
+    <div class="ja">
+      <h3>論文</h3>
+      <ul>
+        <li>論文タイトル1</li>
+        <li>論文タイトル2</li>
+      </ul>
+
+      <h3>受賞</h3>
+      <ul>
+        <li>〇〇賞</li>
+      </ul>
+    </div>
+
+    <div class="en">
+      <h3>Publications</h3>
+      <ul>
+        <li>English publication title 1</li>
+        <li>English publication title 2</li>
+      </ul>
+
+      <h3>Awards</h3>
+      <ul>
+        <li>XXXX Award</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- お問い合わせ -->
+  <section id="contact">
+    <h2 class="ja">お問い合わせ</h2>
+    <h2 class="en">Contact</h2>
+
+    <p class="ja">
+      お問い合わせは以下のメールアドレスまでお願いいたします。
+    </p>
+
+    <p class="en">
+      Please contact me at the following email address.
+    </p>
+
+    <p>
+      example@example.com
+    </p>
+  </section>
+
+</main>
+
+
+<script>
+let currentLanguage = "ja";
+
+function toggleLanguage() {
+
+  const japanese = document.querySelectorAll(".ja");
+  const english = document.querySelectorAll(".en");
+  const button = document.getElementById("languageButton");
+
+  if (currentLanguage === "ja") {
+
+    japanese.forEach(element => {
+      element.style.display = "none";
+    });
+
+    english.forEach(element => {
+      element.style.display = "";
+    });
+
+    button.textContent = "日本語";
+
+    currentLanguage = "en";
+
+  } else {
+
+    japanese.forEach(element => {
+      element.style.display = "";
+    });
+
+    english.forEach(element => {
+      element.style.display = "none";
+    });
+
+    button.textContent = "English";
+
+    currentLanguage = "ja";
+  }
+}
+
+/* 最初は英語を非表示 */
+document.querySelectorAll(".en").forEach(element => {
+  element.style.display = "none";
+});
+</script>
+
+</body>
+</html>
